@@ -1,4 +1,4 @@
-# mjml-react
+# `@luma-team/mjml-react`
 
 (This is forked from Wix's mjml-react — more info why I forked this can be [found in this comment](https://github.com/wix-incubator/mjml-react/issues/52#issuecomment-881830074).)
 
