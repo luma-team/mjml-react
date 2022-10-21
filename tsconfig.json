@@ -5,7 +5,6 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "lib": ["ESNext", "DOM"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitReturns": true,

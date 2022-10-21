@@ -1,25 +1,21 @@
-import React from "react";
-import { createUseAppContext } from "./utils";
+import React, { useContext } from "react";
 
 export const MjmlRenderingContext = React.createContext<{
   mode: "html" | "text";
 }>({ mode: "html" });
 
-export const useMjmlRenderingContext = createUseAppContext(
-  MjmlRenderingContext,
-  "MjmlRenderingContext"
-);
-
-export const renderMjml = <Props,>({
+export const renderTo = ({
   html,
   text,
 }: {
   html: React.ReactNode;
   text: React.ReactNode;
 }) => {
-  const { mode } = useMjmlRenderingContext();
+  const { mode } = useContext(MjmlRenderingContext);
+
   if (mode === "text") {
     return <>{text}</>;
   }
+
   return <>{html}</>;
 };

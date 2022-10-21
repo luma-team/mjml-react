@@ -7,10 +7,7 @@ export const MjmlWrapper = ({
   children,
   ...rest
 }: React.PropsWithChildren<
-  MjmlWrapperProps &
-    BorderProps &
-    Omit<PaddingProps, "padding"> &
-    ClassNameProps
+  MjmlWrapperProps & BorderProps & PaddingProps & ClassNameProps
 >) => {
   return React.createElement("mj-wrapper", handleMjmlProps(rest), children);
 };

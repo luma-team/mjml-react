@@ -12,9 +12,10 @@
     "versionBumpStrategy": "patch"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "./node_modules/.bin/tsc",
     "dev": "tsc --watch",
-    "pub": "tsc && npm version patch && npm publish"
+    "tsc": "tsc --noEmit",
+    "pub": "./node_modules/.bin/tsc && npm version patch && npm publish"
   },
   "devDependencies": {
     "@types/color": "^3.0.2",
