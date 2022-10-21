@@ -1,4 +1,5 @@
 import React from "react";
+import { renderTo } from "./mjml-rendering-context";
 import { ClassNameProps, PaddingProps } from "./types";
 
 import { handleMjmlProps } from "./utils";
@@ -9,7 +10,15 @@ export const MjmlSocial = ({
 }: React.PropsWithChildren<
   MjmlSocialProps & PaddingProps & ClassNameProps
 >) => {
-  return React.createElement("mj-social", handleMjmlProps(rest), children);
+  return renderTo({
+    mjml: React.createElement("mj-social", handleMjmlProps(rest), children),
+    textHtml: (
+      <>
+        {children}
+        <br />
+      </>
+    ),
+  });
 };
 
 export interface MjmlSocialProps {

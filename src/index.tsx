@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
+import {
+  MjmlRenderingContext,
+  MjmlRenderingMode,
+} from "./mjml-rendering-context";
 
 export { Mjml } from "./mjml";
 export { MjmlAccordion } from "./mjml-accordion";
@@ -35,6 +39,15 @@ export { MjmlText } from "./mjml-text";
 export { MjmlTitle } from "./mjml-title";
 export { MjmlWrapper } from "./mjml-wrapper";
 
-export function renderToMjml(email: React.ReactElement) {
-  return ReactDOMServer.renderToStaticMarkup(email);
+export { MjmlRenderingContext } from "./mjml-rendering-context";
+
+export function renderToMjml(
+  email: React.ReactElement,
+  { mode }: { mode: MjmlRenderingMode } = { mode: "mjml" }
+) {
+  return ReactDOMServer.renderToStaticMarkup(
+    <MjmlRenderingContext.Provider value={{ mode }}>
+      {email}
+    </MjmlRenderingContext.Provider>
+  );
 }

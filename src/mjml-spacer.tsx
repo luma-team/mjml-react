@@ -1,4 +1,5 @@
 import React from "react";
+import { renderTo } from "./mjml-rendering-context";
 import { BorderProps, ClassNameProps, PaddingProps } from "./types";
 
 import { handleMjmlProps } from "./utils";
@@ -9,7 +10,10 @@ export const MjmlSpacer = ({
 }: React.PropsWithChildren<
   MjmlSpacerProps & BorderProps & PaddingProps & ClassNameProps
 >) => {
-  return React.createElement("mj-spacer", handleMjmlProps(rest), null);
+  return renderTo({
+    mjml: React.createElement("mj-spacer", handleMjmlProps(rest), null),
+    textHtml: <br />,
+  });
 };
 
 // mj-spacer
