@@ -12,7 +12,8 @@
     "versionBumpStrategy": "patch"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "tsc",
+    "dev": "tsc --watch",
     "pub": "tsc && npm version patch && npm publish"
   },
   "devDependencies": {
