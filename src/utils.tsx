@@ -1,4 +1,5 @@
 import Color from "color";
+import { Context, useContext } from "react";
 
 const handlers: { [key: string]: (name: string, value: any) => any } = {
   inline: boolToString,
@@ -76,4 +77,15 @@ function parseColor(value: string) {
     return new Color(value);
   } catch (e) {}
   return null;
+}
+
+export function createUseAppContext<ContextValue>(
+  context: Context<ContextValue>,
+  contextName: string
+): () => ContextValue {
+  return function useAppContext() {
+    const value = useContext(context);
+
+    return value as ContextValue;
+  };
 }

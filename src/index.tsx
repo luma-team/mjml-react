@@ -35,6 +35,8 @@ export { MjmlText } from "./mjml-text";
 export { MjmlTitle } from "./mjml-title";
 export { MjmlWrapper } from "./mjml-wrapper";
 
+export { MjmlRenderingContext } from "./mjml-rendering-context";
+
 export function renderToMjml(email: React.ReactElement) {
   return ReactDOMServer.renderToStaticMarkup(email);
 }
