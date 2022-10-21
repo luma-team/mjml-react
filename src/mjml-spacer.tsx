@@ -11,8 +11,8 @@ export const MjmlSpacer = ({
   MjmlSpacerProps & BorderProps & PaddingProps & ClassNameProps
 >) => {
   return renderTo({
-    html: React.createElement("mj-spacer", handleMjmlProps(rest), null),
-    text: <br />,
+    mjml: React.createElement("mj-spacer", handleMjmlProps(rest), null),
+    textHtml: <br />,
   });
 };
 

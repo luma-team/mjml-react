@@ -1,21 +1,23 @@
 import React, { useContext } from "react";
 
+export type MjmlRenderingMode = "mjml" | "textHtml";
+
 export const MjmlRenderingContext = React.createContext<{
-  mode: "html" | "text";
-}>({ mode: "html" });
+  mode: MjmlRenderingMode;
+}>({ mode: "mjml" });
 
 export const renderTo = ({
-  html,
-  text,
+  mjml,
+  textHtml,
 }: {
-  html: React.ReactNode;
-  text: React.ReactNode;
+  mjml: React.ReactNode;
+  textHtml: React.ReactNode;
 }) => {
   const { mode } = useContext(MjmlRenderingContext);
 
-  if (mode === "text") {
-    return <>{text}</>;
+  if (mode === "textHtml") {
+    return <>{textHtml}</>;
   }
 
-  return <>{html}</>;
+  return <>{mjml}</>;
 };

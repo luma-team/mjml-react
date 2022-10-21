@@ -8,7 +8,7 @@ export const MjmlHead = ({
   ...rest
 }: React.PropsWithChildren<{}>) => {
   return renderTo({
-    html: React.createElement("mj-head", handleMjmlProps(rest), children),
-    text: null,
+    mjml: React.createElement("mj-head", handleMjmlProps(rest), children),
+    textHtml: null,
   });
 };

@@ -9,8 +9,8 @@ export const MjmlText = ({
   ...rest
 }: React.PropsWithChildren<MjmlTextProps & PaddingProps & ClassNameProps>) => {
   return renderTo({
-    html: React.createElement("mj-text", handleMjmlProps(rest), children),
-    text: <div>{children}</div>,
+    mjml: React.createElement("mj-text", handleMjmlProps(rest), children),
+    textHtml: <div>{children}</div>,
   });
 };
 

@@ -11,8 +11,8 @@ export const MjmlButton = ({
   MjmlButtonProps & PaddingProps & ClassNameProps & HrefProps & BorderProps
 >) => {
   return renderTo({
-    html: React.createElement("mj-button", handleMjmlProps(rest), children),
-    text: children ? (
+    mjml: React.createElement("mj-button", handleMjmlProps(rest), children),
+    textHtml: children ? (
       <div>
         {children}: {rest.href}
       </div>

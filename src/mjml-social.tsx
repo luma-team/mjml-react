@@ -11,8 +11,8 @@ export const MjmlSocial = ({
   MjmlSocialProps & PaddingProps & ClassNameProps
 >) => {
   return renderTo({
-    html: React.createElement("mj-social", handleMjmlProps(rest), children),
-    text: (
+    mjml: React.createElement("mj-social", handleMjmlProps(rest), children),
+    textHtml: (
       <>
         {children}
         <br />

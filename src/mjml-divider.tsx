@@ -11,8 +11,8 @@ export const MjmlDivider = ({
   MjmlDividerProps & ClassNameProps & PaddingProps
 >) => {
   return renderTo({
-    html: React.createElement("mj-divider", handleMjmlProps(rest), null),
-    text: <hr />,
+    mjml: React.createElement("mj-divider", handleMjmlProps(rest), null),
+    textHtml: <hr />,
   });
 };
 

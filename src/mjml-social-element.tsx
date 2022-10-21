@@ -11,12 +11,12 @@ export const MjmlSocialElement = ({
   MjmlSocialElementProps & HrefProps & PaddingProps
 >) => {
   return renderTo({
-    html: React.createElement(
+    mjml: React.createElement(
       "mj-social-element",
       handleMjmlProps(rest),
       children
     ),
-    text: children ? (
+    textHtml: children ? (
       <div>
         {children}: {rest.href}
       </div>
