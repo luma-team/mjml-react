@@ -1,4 +1,5 @@
 import React from "react";
+import { renderMjml } from "./mjml-rendering-context";
 import { ClassNameProps, PaddingProps } from "./types";
 
 import { handleMjmlProps } from "./utils";
@@ -9,7 +10,10 @@ export const MjmlDivider = ({
 }: React.PropsWithChildren<
   MjmlDividerProps & ClassNameProps & PaddingProps
 >) => {
-  return React.createElement("mj-divider", handleMjmlProps(rest), null);
+  return renderMjml({
+    html: React.createElement("mj-divider", handleMjmlProps(rest), null),
+    text: <hr />,
+  });
 };
 
 export interface MjmlDividerProps {

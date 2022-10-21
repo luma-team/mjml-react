@@ -1,4 +1,5 @@
 import React from "react";
+import { renderMjml } from "./mjml-rendering-context";
 import { HrefProps, PaddingProps } from "./types";
 
 import { handleMjmlProps } from "./utils";
@@ -9,11 +10,20 @@ export const MjmlSocialElement = ({
 }: React.PropsWithChildren<
   MjmlSocialElementProps & HrefProps & PaddingProps
 >) => {
-  return React.createElement(
-    "mj-social-element",
-    handleMjmlProps(rest),
-    children
-  );
+  return renderMjml({
+    html: React.createElement(
+      "mj-social-element",
+      handleMjmlProps(rest),
+      children
+    ),
+    text: children ? (
+      <div>
+        {children}: {rest.href}
+      </div>
+    ) : (
+      <div>{rest.href}</div>
+    ),
+  });
 };
 
 export interface MjmlSocialElementProps {

@@ -1,4 +1,5 @@
 import React from "react";
+import { renderMjml } from "./mjml-rendering-context";
 import { ClassNameProps, PaddingProps } from "./types";
 
 import { handleMjmlProps } from "./utils";
@@ -7,7 +8,10 @@ export const MjmlText = ({
   children,
   ...rest
 }: React.PropsWithChildren<MjmlTextProps & PaddingProps & ClassNameProps>) => {
-  return React.createElement("mj-text", handleMjmlProps(rest), children);
+  return renderMjml({
+    html: React.createElement("mj-text", handleMjmlProps(rest), children),
+    text: <div>{children}</div>,
+  });
 };
 
 // mj-text
