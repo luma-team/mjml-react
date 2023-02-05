@@ -25,6 +25,7 @@ const handlers: { [key: string]: (name: string, value: any) => any } = {
   "inner-background-color": handleColor,
 };
 
+// Converts the property to the proper value that MJML expects
 export function handleMjmlProps(props: any) {
   return Object.keys(props).reduce((acc, curr) => {
     const mjmlProp = kebabCase(curr);
