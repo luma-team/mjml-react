@@ -7,6 +7,7 @@ export const MjmlBody = ({
   ...rest
 }: React.PropsWithChildren<{
   width?: number | undefined;
+  cssClass?: string;
   backgroundColor?: React.CSSProperties["backgroundColor"] | undefined;
 }>) => {
   return React.createElement("mj-body", handleMjmlProps(rest), children);
